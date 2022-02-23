@@ -23,8 +23,8 @@ class PID:
         integralSum = 0
         self.r = r
         self.y = y
-        self.ek = r-y
+        self.ek = r - y
         integralSum = integralSum + self.Integral(self.ek, self.ek_1)
-        self.outputPID = self.kp*self.ek+self.ki*integralSum+self.kd*self.Derivative(self.ek, self.ek_1)
+        self.outputPID = self.kp * self.ek + self.ki * integralSum + self.kd * self.Derivative(self.ek, self.ek_1)
         self.ek_1 = self.ek
         return self.outputPID
